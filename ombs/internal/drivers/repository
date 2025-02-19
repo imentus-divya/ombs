@@ -1,0 +1,7 @@
+// blockchain data
+// database
+
+
+redis dbmigrate -path ./migrations/database/migration -database "postgresql://postgres:123@localhost:5432/postgres?sslmode=disable" -verbose up
+migrate -path ./migrations/database/migration -database "postgresql://postgres:123@localhost:5432/postgres?sslmode=disable" -verbose down
+migrate create -ext sql -dir database/migration/ -seq init_mg
